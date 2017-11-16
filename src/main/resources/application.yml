@@ -1,9 +1,13 @@
 server:
-  port: 8080
+  port: 9090
   context-path: /
   tomcat:
-    uri-encoding: UTF-8
+    uri-encoding: utf-8
 spring:
+  thymeleaf:
+    mode: LEGACYHTML5
+    cache: false
+    encoding: UTF-8
   datasource:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:file:./data/data.db
@@ -11,15 +15,11 @@ spring:
     password: 123456
   data:
     elasticsearch:
-      cluster-nodes: 127.0.0.1:9300
-      cluster-name: elasticsearch
       repositories:
         enabled: true
-  thymeleaf:
-    encoding: UTF-8
-    mode: LEGACYHTML5
-    cache: false
+      cluster-name: elasticsearch
+      cluster-nodes: 127.0.0.1:9300
   jpa:
+    show-sql: true
     hibernate:
       ddl-auto: update
-    show-sql: true

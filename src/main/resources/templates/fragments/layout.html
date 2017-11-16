@@ -16,7 +16,7 @@
 </head>
 <body>
 <header th:fragment="header" th:remove="tag">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -45,7 +45,8 @@
                         <a href="">About</a>
                     </li>
                 </ul>
-                <form class="navbar-form">
+                
+                <form th:action="@{/search}" method="post" class="navbar-form">
                     <div class="form-group">
                         <div class="input-group">
                         <span class="input-group-addon" id="search-ico">
